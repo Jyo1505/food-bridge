@@ -23,37 +23,4 @@
     </p><br>
     <p>Overall, the Food Waste Management System is designed to efficiently manage excess food and ensure that it is distributed to those in need. The User module accepts food donations, the Admin module lists them for NGOs and charities to choose from, and the Delivery Person module provides pickup and drop-off services. This system benefits the community by reducing food waste and helping those in need
     </p>
-    <h3>User </h3>
-   <!-- <img src="img/User-module.jpg"> -->
-    <img src="img/mobile.jpg">
-    <h3>Admin </h3>
-    <img src="img/Admin.jpg">
-     <h3>Delivery </h3>
-    <img src="img/Delivery_module.jpg">
-    <h3>features:</h3>
-    <ul><li>Mobile Screen friendly website.</li>
-      <li>chatbot support</li>
-      <li>Secure Login</li>
-      </ul>
-      <h2>Mobile Screen friendly website.</h2>
-      <img src="img/responsive.gif">
-      <h2>chatbot support</h2>
-      <img src="img/chatbotsupport.jpg">
-      <h2>Secure Login</h2>
-      <img src="img/hash-flow.png">
-      <h2>How to run</h2>
-      <ol>
-       <li>Download the project zip file</li>
-       <li> Extract the file and copy the folder</li>
-       <li>Paste inside root directory(for xampp xampp/htdocs, for wamp wamp/www, for lamp var/www/Html)</li>
-       <li> Open PHPMyAdmin (http://localhost/phpmyadmin)</li>
-       <li> Create a database</li>
-       <li>Import demo.sql file(inside database folder)</li>
-       <li> Run the script http://localhost/folderName </li> </ol>
-
-<h3>Authors:</h3>
-<p>Isha</p>
-<p>Jyotsna</p>
-
-
-"# food-bridge" 
+    
