@@ -1,0 +1,322 @@
+
+body{
+    /* background-color: #20cd79; */
+ 
+
+
+}
+
+
+  
+
+
+.cover{
+ width: 100%;
+    height: 500px;
+    background:url('profilecover2.jpg')no-repeat;
+    background-size: cover;
+    display: grid;
+    place-items:center;
+    padding-top: 8rem; 
+}
+.profilebox{
+    padding-top: 8rem;
+   text-align: center;    
+    width: 700px;
+    height: 900px;
+    margin: 20px auto ;
+    
+    /* background-color:rgba(90, 255, 208, 0.713); */
+    /* box-shadow:0 .5rem 1rem rgba(0,0,0.1); */
+
+    color:black;
+    padding: 10px 20px 20px 20px;
+    font-size: 20px;
+    /* border-radius: 30px ; */
+    
+
+}
+.info{
+    /* font-family: 'Times New Roman', Times, serif; */
+    
+    text-align: left;
+    padding: 10px;
+}
+.table-container{
+    padding: 0 ;
+    margin: 20px auto 10px;
+    /* border: 1px solid ; */
+  
+}
+
+.table{
+    width: 100%;
+
+    border-collapse:separate;
+    border-spacing: 0px;
+    
+
+
+}
+th{
+    position:sticky;
+    top:0px;
+    background-color: #37db8c;
+    /* background-color: rgb(240, 242, 246) */
+
+
+    
+}
+th,td{
+    /* border: 1px solid #12121385; */
+
+}
+.table-wrapper{
+    max-height: 130px;
+    overflow-y: scroll;
+
+}
+.table thead tr th{
+    font-size: 14px;
+    font-weight: medium;
+    letter-spacing: 0.35px;
+    opacity: 1;
+    padding: 12px;
+    vertical-align: top;
+
+} 
+
+
+/* for phone */
+@media (max-width: 767px) {
+    .cover{
+        width: auto;
+        height:auto;
+        background:url('profilecover1.jpg')no-repeat;
+        background-size: cover;
+        display: grid;
+        place-items:center;
+        padding-top: 8rem;
+      }
+      .cover img{
+        width: 100%;
+        height: auto;
+      }
+    .profilebox{
+        width: 350px;
+        font-size: 14px;
+        height: 600px;
+        border-radius: 30px ;
+
+        
+    }
+    .table thead tr th{
+        font-size: 14px;
+        font-weight: medium;
+        letter-spacing: 0.35px;
+        opacity: 1;
+        padding: 5px;
+    }
+}
+
+
+.headingline{
+    font-size: 28px;
+    text-align: center;
+    align-items: center; 
+    text-decoration: underline 5px;
+    text-decoration-color: #06C167;
+   }
+
+
+   .profile-container {
+            min-height: 100vh;
+            background: #f8f9fa;
+            padding: 2rem;
+        }
+        
+        .profile-header {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+        
+        .profile-info h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-info p {
+            color: var(--gray);
+            margin-bottom: 0.3rem;
+        }
+        
+        .profile-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .profile-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+        
+        .profile-sidebar {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            height: fit-content;
+        }
+        
+        .sidebar-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .info-item {
+            display: flex;
+            margin-bottom: 1.2rem;
+        }
+        
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f0f9f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .info-details h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .info-details p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .profile-main {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+        }
+        
+        .donations-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .donations-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .donations-table th,
+        .donations-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .donations-table th {
+            font-weight: 600;
+            color: var(--dark);
+            background: #f8f9fa;
+        }
+        
+        .donations-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .no-donations {
+            text-align: center;
+            padding: 3rem;
+            color: var(--gray);
+        }
+        
+        .no-donations i {
+            font-size: 3rem;
+            color: #ddd;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 992px) {
+            .profile-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-stats {
+                justify-content: center;
+            }
+        }

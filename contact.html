@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Food Bridge</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="chatbot/chatbot.css">
+    <style>
+        /* FAQ Section Styles */
+        .faq-container {
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        .faq-item {
+          background: white;
+          border-radius: var(--radius);
+          margin-bottom: 1rem;
+          overflow: hidden;
+          box-shadow: var(--shadow);
+          transition: var(--transition);
+        }
+
+        .faq-item:hover {
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+          width: 100%;
+          padding: 1.5rem;
+          text-align: left;
+          background: none;
+          border: none;
+          font-size: 1.1rem;
+          font-weight: 600;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: var(--dark);
+          transition: var(--transition);
+        }
+
+        .faq-question:hover {
+          color: var(--primary);
+        }
+
+        .faq-question i {
+          font-size: 1.2rem;
+          color: var(--primary);
+          transition: var(--transition);
+        }
+
+        .faq-answer {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+          background: var(--light);
+        }
+
+        .faq-answer p {
+          padding: 0 1.5rem 1.5rem;
+          color: var(--gray);
+          line-height: 1.6;
+        }
+
+        .faq-answer img {
+          width: 100%;
+          max-width: 300px;
+          height: auto;
+          border-radius: 8px;
+          margin-top: 1rem;
+          display: block;
+        }
+
+        .faq-item.active .faq-answer {
+          max-height: 500px; /* Adjust based on content */
+        }
+
+        .faq-item.active .faq-question i {
+          transform: rotate(180deg);
+        }
+
+        /* Ensure proper spacing between FAQ items */
+        .faq-item + .faq-item {
+          margin-top: 1rem;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+          .faq-question {
+            padding: 1.2rem;
+            font-size: 1rem;
+          }
+          
+          .faq-answer p {
+            padding: 0 1.2rem 1.2rem;
+            font-size: 0.95rem;
+          }
+          
+          .faq-answer img {
+            max-width: 100%;
+          }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon"><i class="fas fa-utensils"></i></div>
+             <b style="color: #06C167;">FoodBridge</b>
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Login</a></li>
+        </nav>
+    </header>
+
+<section class="banner" style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.9), rgba(78, 205, 196, 0.9)), url('img/about-banner.jpg');">
+        <div class="banner-content" data-aos="fade-up">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div data-aos="fade-up">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have questions or want to get involved? Reach out to us!</p>
+            
+
+            <div class="contact-grid">
+                <form action="contact.php" method="POST">
+                <div class="contact-form-container" data-aos="fade-right">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Send us a message</h3>
+                            <form action="feedback.php" method="post" id="contactForm">
+                                <div class="form-group">
+                                    <label class="form-label" for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" class="form-control" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" class="form-control" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="message">Your Message</label>
+                                    <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                                </div>
+                                
+                                <button type="submit" name="send" class="btn">Send Message</button>
+                            </form>
+                            <div id="formMessage" class="form-message"></div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+                <div data-aos="fade-left">
+                    <div class="card" style="margin-bottom: 2rem;">
+                        <div class="card-body">
+                            <h3 class="card-title">Contact Information</h3>
+                            <ul class="contact-list">
+                                <li>
+                                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div>
+                                        <h4>Our Address</h4>
+                                        <p>Patkar College, Mumbai, Maharashtra 400057, India</p>
+                                    </div>
+                                </li>
+                                
+                                <li>
+                                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                                    <div>
+                                        <h4>Phone Number</h4>
+                                        <p>+91 98765 43210</p>
+                                    </div>
+                                </li>
+                                
+                                <li>
+                                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                    <div>
+                                        <h4>Email Address</h4>
+                                        <p>foodbridge@gmail.com</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Business Hours</h3>
+                            <ul class="hours-list">
+                                <li>
+                                    <span>Monday - Friday</span>
+                                    <span>9:00 AM - 6:00 PM</span>
+                                </li>
+                                <li>
+                                    <span>Saturday</span>
+                                    <span>10:00 AM - 4:00 PM</span>
+                                </li>
+                                <li>
+                                    <span>Sunday</span>
+                                    <span>Closed</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f8f9fa;">
+        <div data-aos="fade-up">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find answers to common questions about Food Bridge</p>
+            
+            <div class="faq-container">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <button class="faq-question">
+                        <span>How do I donate food?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Donating food is easy! Simply click on the "Donate Food" button on our homepage, fill out the donation form with details about the food you'd like to donate, and our team will arrange for pickup at your convenience.</p>
+                        <img src="img/donation-process.jpg" alt="Donation process">
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <button class="faq-question">
+                        <span>What types of food do you accept?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept all types of edible, non-perishable and perishable food that is safe for consumption. This includes cooked meals, raw ingredients, packaged foods, and produce. We cannot accept food that is spoiled, moldy, or past its expiration date.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <button class="faq-question">
+                        <span>How will my donation be used?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your food donation will be distributed to individuals and families in need through our network of partner organizations, including homeless shelters, orphanages, community centers, and disaster relief programs. We ensure that all donated food reaches those who need it most.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <button class="faq-question">
+                        <span>Can I volunteer with Food Bridge?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We welcome volunteers who are passionate about fighting hunger and reducing food waste. You can help with food collection, sorting, distribution, event organization, and administrative tasks. Visit our "Get Involved" page to learn more and sign up as a volunteer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div data-aos="fade-up">
+            <h2 class="section-title">Chat With Our Assistant</h2>
+            <p class="section-subtitle">Get instant answers to your questions</p>
+            
+            <div class="chatbot-container" data-aos="zoom-in">
+                <div class="chatbot-header">
+                    <h3><i class="fas fa-robot"></i> Food Bridge Assistant</h3>
+                    <p>I'm here to help you with any questions about Food Bridge</p>
+                </div>
+                
+                <div id="chat-container">
+                    <div id="messages">
+                        <div class="message bot-message">
+                            <div class="message-content">
+                                <p>Hello! I'm the Food Bridge Assistant. How can I help you today?</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <input type="text" id="input" placeholder="Type your message...">
+                        <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f8f9fa;">
+        <div data-aos="fade-up">
+            <h2 class="section-title">Our Location</h2>
+            <p class="section-subtitle">Visit us at our headquarters</p>
+            
+            <div class="map-section" data-aos="fade-up">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.628090893508!2d72.84313697595962!3d19.16775024908429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7b4fdfea429%3A0x6f2183fce6d9ed9f!2sPatkar%20college!5e0!3m2!1sen!2sin!4v1757330218432!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Food Bridge</h3>
+                <p>Connecting surplus food with hungry people to reduce waste and fight hunger in our communities.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/TheAkshayaPatraFoundation/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/globalgiving"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/charitism/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="home.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <!-- <li><a href="profile.php"><i class="fas fa-chevron-right"></i> My Profile</a></li> -->
+                    <li><a href="fooddonateform.php"><i class="fas fa-chevron-right"></i> Donate Food</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Patkar College, Mumbai, India</li>
+                    <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-envelope"></i> foodbridge@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Food Bridge. All rights reserved. | Designed with <i class="fas fa-heart"></i> for a better world</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        hamburger = document.querySelector(".hamburger");
+        navBar = document.querySelector(".nav-bar");
+        
+        hamburger.onclick = function() {
+            navBar.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        }
+        
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+          const faqQuestions = document.querySelectorAll('.faq-question');
+          
+          faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+              const faqItem = question.parentElement;
+              const answer = question.nextElementSibling;
+              const icon = question.querySelector('i');
+              
+              // Close all other FAQ items
+              faqQuestions.forEach(otherQuestion => {
+                if (otherQuestion !== question) {
+                  const otherItem = otherQuestion.parentElement;
+                  const otherAnswer = otherQuestion.nextElementSibling;
+                  const otherIcon = otherQuestion.querySelector('i');
+                  
+                  otherItem.classList.remove('active');
+                  otherAnswer.style.maxHeight = '0';
+                  otherIcon.style.transform = 'rotate(0deg)';
+                }
+              });
+              
+              // Toggle current FAQ item
+              faqItem.classList.toggle('active');
+              
+              if (faqItem.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+              } else {
+                answer.style.maxHeight = '0';
+                icon.style.transform = 'rotate(0deg)';
+              }
+            });
+          });
+        });
+        
+        // Contact form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formMessage = document.getElementById('formMessage');
+            formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+            formMessage.className = 'form-message success';
+            
+            this.reset();
+            
+            setTimeout(() => {
+                formMessage.textContent = '';
+                formMessage.className = 'form-message';
+            }, 5000);
+        });
+        
+        // Chatbot functionality
+        const chatInput = document.getElementById('input');
+        const sendBtn = document.getElementById('sendBtn');
+        const messagesContainer = document.getElementById('messages');
+        
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message === '') return;
+            
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user-message';
+            userMessage.innerHTML = `
+                <div class="message-content">
+                    <p>${message}</p>
+                </div>
+            `;
+            messagesContainer.appendChild(userMessage);
+            
+            chatInput.value = '';
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            // Simulate bot response
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.className = 'message bot-message';
+                botMessage.innerHTML = `
+                    <div class="message-content">
+                        <p>Thank you for your message! Our team will get back to you soon. For immediate assistance, please call us at +91 98765 43210.</p>
+                    </div>
+                `;
+                messagesContainer.appendChild(botMessage);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 1000);
+        }
+        
+        sendBtn.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+    
+    <script type="text/javascript" src="chatbot/chatbot.js"></script>
+    <script type="text/javascript" src="chatbot/constants.js"></script>
+    <script type="text/javascript" src="chatbot/speech.js"></script>
+</body>
+</html>

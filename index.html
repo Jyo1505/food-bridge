@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Food Bridge</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #FFD166 0%, #FF9A8B 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 90%;
+            max-width: 1200px;
+            display: flex;
+            min-height: 600px;
+        }
+        
+        .login-left {
+            flex: 1;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+        }
+        
+        .login-right {
+            flex: 1;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .login-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .login-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .login-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .login-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%);
+            transition: var(--transition);
+        }
+        
+        .login-btn:hover::before {
+            transform: translateX(0);
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .user-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        
+        .admin-btn {
+            background: linear-gradient(135deg, var(--secondary), #3DBCB3);
+        }
+        
+        .delivery-btn {
+            background: linear-gradient(135deg, var(--accent), #FFC233);
+        }
+        
+        .login-features {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h4 {
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+        
+        .feature-text p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+                max-width: 400px;
+            }
+            
+            .login-left, .login-right {
+                padding: 2rem;
+            }
+            
+            .login-logo {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" data-aos="fade-up">
+        <div class="login-left">
+            <div class="login-logo">FoodBridge</div>
+            <p class="login-subtitle">Connecting surplus food with hungry people to reduce waste and fight hunger</p>
+            
+            <div class="login-features">
+                <div class="feature-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <div class="feature-text">
+                        <h4>Reduce Waste</h4>
+                        <p>Help divert edible food from landfills</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="feature-icon"><i class="fas fa-utensils"></i></div>
+                    <div class="feature-text">
+                        <h4>Feed Hungry</h4>
+                        <p>Provide meals to those in need</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <div class="feature-text">
+                        <h4>Build Community</h4>
+                        <p>Connect with like-minded people</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="login-right">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem; text-align: center;">Welcome to Food Bridge</h2>
+            <p style="color: var(--gray); text-align: center; margin-bottom: 2rem;">Please select your login type</p>
+            
+            <div class="login-options">
+                <a href="signup.php" class="login-btn user-btn" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-user"></i>
+                    <span>User Login</span>
+                </a>
+                
+                <a href="admin/signup.php" class="login-btn admin-btn" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Admin Login</span>
+                </a>
+                
+                <a href="delivery/deliverysignup.php" class="login-btn delivery-btn" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-motorcycle"></i>
+                    <span>Delivery Login</span>
+                </a>
+            </div>
+            
+            
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
